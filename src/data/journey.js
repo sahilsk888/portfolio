@@ -40,7 +40,7 @@ export const journeyMilestones = [
     year: 'NOW',
     title: 'Intelligent Scale & Explainable AI',
     category: 'DATA SCIENCE & RESEARCH',
-    summary: 'Focusing on transparent, human-aligned AI systems, cognitive burnout analytics (MINDMAP AI), and modern cloud infrastructure.',
+    summary: 'Focusing on transparent, human-aligned AI systems, cognitive burnout analytics, and modern cloud infrastructure.',
     points: [
       'Investigating explainable AI techniques (SHAP/LIME) to demystify black-box predictive models.',
       'Developing data pipelines that prioritize ethical constraints and actionable real-world impact.',

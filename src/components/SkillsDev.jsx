@@ -1,21 +1,17 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { skillsCategories } from '../data/skills';
+import { developmentAreas } from '../data/skills';
 
 gsap.registerPlugin(ScrollTrigger);
-
-const DEV_CATEGORY_IDS = ['programming', 'web_dev', 'databases', 'tools_devops', 'cloud_deployment'];
 
 export default function SkillsDev() {
   const containerRef = useRef(null);
   const cardsRef = useRef([]);
 
-  const devCategories = skillsCategories.filter(cat => DEV_CATEGORY_IDS.includes(cat.id));
-
   useEffect(() => {
     const ctx = gsap.context(() => {
-      cardsRef.current.forEach((el, index) => {
+      cardsRef.current.forEach((el) => {
         if (!el) return;
         gsap.fromTo(
           el,
@@ -41,49 +37,36 @@ export default function SkillsDev() {
   return (
     <section id="development" ref={containerRef} className="scene-section">
       <div className="editorial-container">
-        <div className="eyebrow">SCENE 04 // DEVELOPMENT & SYSTEMS</div>
+        <div className="eyebrow">SCENE 04 // DEVELOPMENT</div>
 
         <div style={{ marginBottom: '3rem' }}>
           <h2 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', letterSpacing: '-0.02em', marginBottom: '1rem' }}>
-            SOFTWARE ARCHITECTURE & STACK
+            DEVELOPMENT
           </h2>
           <p style={{ color: 'var(--text-secondary)', maxWidth: '750px', fontSize: '1.1rem', lineHeight: '1.6' }}>
-            Production-oriented tools and programming languages powering low-latency backends, structured schemas, and responsive web platforms.
+            Core engineering competencies across modern web interfaces, backend systems, APIs, and software architecture.
           </p>
         </div>
 
         <div className="skills-grid">
-          {devCategories.map((cat, catIdx) => (
+          {developmentAreas.map((area, idx) => (
             <div
-              key={cat.id}
-              ref={el => (cardsRef.current[catIdx] = el)}
+              key={area.id}
+              ref={el => (cardsRef.current[idx] = el)}
               className="skill-card"
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '0.75rem' }}>
-                <h3 style={{ fontSize: '1.15rem', color: 'var(--text-highlight)', letterSpacing: '0.04em' }}>
-                  {cat.title}
+                <h3 style={{ fontSize: '1.25rem', color: 'var(--text-highlight)', letterSpacing: '0.02em', fontWeight: '600' }}>
+                  {area.name}
                 </h3>
                 <span className="font-mono" style={{ fontSize: '0.75rem', color: 'var(--accent-cyan)' }}>
-                  0{catIdx + 1}
+                  0{idx + 1}
                 </span>
               </div>
 
-              <p style={{ fontSize: '0.82rem', color: 'var(--text-muted)', marginBottom: '1.25rem', lineHeight: '1.4' }}>
-                {cat.tagline}
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-muted)', lineHeight: '1.5', margin: 0 }}>
+                {area.tagline}
               </p>
-
-              <div style={{ display: 'flex', flexDirection: 'column' }}>
-                {cat.skills.map((skill) => (
-                  <div key={skill.name} className="skill-item-row">
-                    <span style={{ fontSize: '0.9rem', fontWeight: '500', color: 'var(--text-primary)' }}>
-                      {skill.name}
-                    </span>
-                    <span className="font-mono" style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                      {skill.role}
-                    </span>
-                  </div>
-                ))}
-              </div>
             </div>
           ))}
         </div>

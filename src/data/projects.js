@@ -44,30 +44,8 @@ export const projects = [
     }
   },
   {
-    id: 'mindmap-ai',
-    number: '03',
-    name: 'MINDMAP AI',
-    subtitle: 'Student Burnout Analytics & Predictive Risk Assessment',
-    focus: ['Data Science', 'Machine Learning', 'Analytics'],
-    tagline: 'Psychometric sentiment modeling and academic workload correlation engine designed to identify early-stage cognitive burnout indicators in university students.',
-    overview: 'MINDMAP AI analyzes multidisciplinary academic markers, self-reported stress indicators, and behavioral submission patterns to construct a multi-dimensional burnout vulnerability index. It empowers educational counselors and students with preventative insights before academic exhaustion occurs.',
-    role: 'Data Scientist & ML Engineer — Exploratory data analysis, psychometric feature extraction, correlation matrix modeling, and visual dashboard design.',
-    technologies: ['Python', 'Pandas', 'Scikit-learn', 'Matplotlib', 'Seaborn', 'NLP', 'Flask'],
-    highlights: [
-      'Conducted exhaustive EDA across academic deadlines, sleep deficit indices, and student workload ratios.',
-      'Engineered an ensemble risk-scoring model synthesizing sentiment polarity and assignment submission trajectories.',
-      'Developed dynamic visual correlation heatmaps helping advisors detect systemic departmental stress spikes.',
-      'Formulated early-intervention alert triggers respecting student anonymity and ethical data boundaries.'
-    ],
-    architecture: 'Survey & Log Ingestion → NLP Sentiment Tokenization → Workload Feature Engineering → Random Forest Classifier → Visualization Dashboard',
-    links: {
-      github: 'https://github.com/sahilsk888',
-      live: null
-    }
-  },
-  {
     id: 'blackout',
-    number: '04',
+    number: '03',
     name: 'BLACKOUT',
     subtitle: 'Authoritative Server Multiplayer Game',
     focus: ['Game Development', 'Networking', 'Server Architecture', 'Godot'],

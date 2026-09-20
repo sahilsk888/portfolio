@@ -1,3 +1,49 @@
+export const developmentAreas = [
+  {
+    id: 'web-dev',
+    name: 'Web Development',
+    tagline: 'Modern responsive web applications & client-server architectures'
+  },
+  {
+    id: 'backend-dev',
+    name: 'Backend Development',
+    tagline: 'Scalable server systems, runtime environments & database persistence'
+  },
+  {
+    id: 'apis',
+    name: 'APIs',
+    tagline: 'Stateless RESTful endpoints, service contracts & microservices'
+  },
+  {
+    id: 'software-eng',
+    name: 'Software Engineering',
+    tagline: 'System design, algorithm efficiency & robust software practices'
+  }
+];
+
+export const dataAiAreas = [
+  {
+    id: 'data-science',
+    name: 'Data Science',
+    tagline: 'Statistical inquiry, exploratory data analysis & feature engineering'
+  },
+  {
+    id: 'machine-learning',
+    name: 'Machine Learning',
+    tagline: 'Supervised & unsupervised models, classification & predictive pipelines'
+  },
+  {
+    id: 'artificial-intelligence',
+    name: 'Artificial Intelligence',
+    tagline: 'Deep neural architectures, natural language processing & computer vision'
+  },
+  {
+    id: 'data-analytics',
+    name: 'Data Analytics',
+    tagline: 'Data visualization, risk modeling & actionable intelligence extraction'
+  }
+];
+
 export const skillsCategories = [
   {
     id: 'programming',
