@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowDown } from 'lucide-react';
-import { GithubIcon, LinkedinIcon, InstagramIcon } from './Icons';
+import { GithubIcon, LinkedinIcon, InstagramIcon, MailIcon } from './Icons';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -73,44 +73,15 @@ export default function Hero() {
           '-=0.4'
         );
 
-      // Scroll-driven Parallax and Exit Transformation
-      // Photo moves subtly with gentle parallax, anchored to page
+      // Subtle Scroll-driven Parallax for photograph (stays fully visible and sharp)
       gsap.to(photoImgRef.current, {
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 1.2,
-        },
-        y: 60,
-        scale: 1.02,
-        ease: 'none',
-      });
-
-      // Text column moves smoothly upward
-      gsap.to(textColRef.current, {
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: 0.8,
-        },
-        y: -40,
-        opacity: 0.25,
-        filter: 'blur(5px)',
-        ease: 'none',
-      });
-
-      // Photo wrapper fades smoothly on exit
-      gsap.to(photoWrapperRef.current, {
         scrollTrigger: {
           trigger: containerRef.current,
           start: 'top top',
           end: 'bottom top',
           scrub: 1,
         },
-        opacity: 0.2,
-        filter: 'blur(6px)',
+        y: 40,
         ease: 'none',
       });
     }, containerRef);
@@ -197,6 +168,15 @@ export default function Hero() {
                 flexWrap: 'wrap',
               }}
             >
+              <a
+                href="mailto:ssahilskk430@gmail.com"
+                className="hero-social-pill"
+                aria-label="Email Sahil"
+              >
+                <MailIcon size={16} />
+                <span>EMAIL</span>
+              </a>
+
               <a
                 href="https://github.com/sahilsk888"
                 target="_blank"

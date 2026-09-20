@@ -1,5 +1,12 @@
 export const socialLinks = [
   {
+    id: 'email',
+    platform: 'EMAIL',
+    handle: 'ssahilskk430@gmail.com',
+    url: 'mailto:ssahilskk430@gmail.com',
+    description: 'Direct inquiries, collaboration proposals, and engineering opportunities',
+  },
+  {
     id: 'github',
     platform: 'GITHUB',
     handle: '@sahilsk888',

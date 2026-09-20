@@ -21,6 +21,9 @@ export function useSmoothScroll() {
       touchMultiplier: 1.5,
     });
 
+    window.__lenis = lenis;
+    window.lenis = lenis;
+
     lenis.on('scroll', ScrollTrigger.update);
 
     const updateTicker = (time) => {
@@ -31,6 +34,8 @@ export function useSmoothScroll() {
     gsap.ticker.lagSmoothing(0);
 
     return () => {
+      window.__lenis = null;
+      window.lenis = null;
       gsap.ticker.remove(updateTicker);
       lenis.destroy();
     };

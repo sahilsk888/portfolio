@@ -17,6 +17,14 @@ export default function ProjectModal({ project, isOpen, onClose }) {
 
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      // Pause background Lenis smooth scrolling so the website cannot scroll
+      if (window.__lenis) {
+        window.__lenis.stop();
+      }
+      // Reset drawer scroll to top
+      if (drawerRef.current) {
+        drawerRef.current.scrollTop = 0;
+      }
       window.addEventListener('keydown', handleKeyDown);
 
       // Entrance animation
@@ -41,15 +49,26 @@ export default function ProjectModal({ project, isOpen, onClose }) {
       );
     } else {
       document.body.style.overflow = '';
+      if (window.__lenis) {
+        window.__lenis.start();
+      }
     }
 
     return () => {
       document.body.style.overflow = '';
+      if (window.__lenis) {
+        window.__lenis.start();
+      }
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen]);
 
   const handleClose = () => {
+    // Resume background Lenis smooth scroll
+    if (window.__lenis) {
+      window.__lenis.start();
+    }
+
     // Smooth exit animation before unmounting/setting state
     gsap.to(drawerRef.current, {
       x: '100%',
@@ -81,8 +100,18 @@ export default function ProjectModal({ project, isOpen, onClose }) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="project-modal-title"
+      data-lenis-prevent="true"
+      data-lenis-prevent-wheel="true"
+      data-lenis-prevent-touch="true"
     >
-      <div ref={drawerRef} className="modal-drawer">
+      <div
+        ref={drawerRef}
+        className="modal-drawer"
+        data-lenis-prevent="true"
+        data-lenis-prevent-wheel="true"
+        data-lenis-prevent-touch="true"
+        onWheel={(e) => e.stopPropagation()}
+      >
         <button
           onClick={handleClose}
           className="modal-close-btn"

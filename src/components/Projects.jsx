@@ -68,7 +68,7 @@ export default function Projects() {
           </span>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           {projects.map((project, idx) => (
             <article
               key={project.id}
@@ -91,10 +91,10 @@ export default function Projects() {
                   <h3 className="project-title">{project.name}</h3>
                   <div
                     style={{
-                      fontSize: 'clamp(1.1rem, 2vw, 1.4rem)',
+                      fontSize: 'clamp(0.95rem, 1.4vw, 1.15rem)',
                       color: 'var(--accent-cyan)',
                       fontFamily: 'var(--font-display)',
-                      marginBottom: '1rem',
+                      marginBottom: '0.65rem',
                     }}
                   >
                     {project.subtitle}
@@ -103,8 +103,8 @@ export default function Projects() {
 
                 <div
                   style={{
-                    width: '48px',
-                    height: '48px',
+                    width: '40px',
+                    height: '40px',
                     borderRadius: '50%',
                     border: '1px solid var(--border-subtle)',
                     display: 'flex',
@@ -116,23 +116,23 @@ export default function Projects() {
                   }}
                   className="project-arrow-badge"
                 >
-                  <ArrowUpRight size={22} />
+                  <ArrowUpRight size={18} />
                 </div>
               </div>
 
               <p
                 style={{
                   color: 'var(--text-secondary)',
-                  fontSize: '1.05rem',
-                  lineHeight: '1.7',
-                  maxWidth: '900px',
-                  marginBottom: '2rem',
+                  fontSize: '0.96rem',
+                  lineHeight: '1.6',
+                  maxWidth: '850px',
+                  marginBottom: '1.35rem',
                 }}
               >
                 {project.tagline}
               </p>
 
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem', borderTop: '1px solid var(--border-subtle)', paddingTop: '1.5rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.25rem', borderTop: '1px solid var(--border-subtle)', paddingTop: '1.1rem' }}>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                   {project.focus.map((tag) => (
                     <span key={tag} className="project-badge">
@@ -141,7 +141,7 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="font-mono" style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+                <div className="font-mono" style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
                   DISCOVER ARCHITECTURE →
                 </div>
               </div>

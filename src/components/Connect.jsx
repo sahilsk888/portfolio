@@ -2,12 +2,13 @@ import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowUpRight } from 'lucide-react';
-import { GithubIcon, LinkedinIcon, InstagramIcon } from './Icons';
+import { GithubIcon, LinkedinIcon, InstagramIcon, MailIcon } from './Icons';
 import { socialLinks } from '../data/socialLinks';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ICONS = {
+  email: MailIcon,
   github: GithubIcon,
   linkedin: LinkedinIcon,
   instagram: InstagramIcon,
@@ -83,8 +84,8 @@ export default function Connect() {
                 key={link.id}
                 ref={(el) => (linksRef.current[idx] = el)}
                 href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={link.url.startsWith('mailto:') ? undefined : '_blank'}
+                rel={link.url.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
                 className="social-link-card"
                 aria-label={`${link.platform}: ${link.handle}`}
               >
