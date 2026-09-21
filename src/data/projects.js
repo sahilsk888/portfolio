@@ -64,5 +64,27 @@ export const projects = [
       github: 'https://github.com/sahilsk888',
       live: null
     }
+  },
+  {
+    id: 'scripto',
+    number: '04',
+    name: 'SCRIPTO',
+    subtitle: 'AI-Powered Professional Letter Generator & Document Assistant',
+    focus: ['AI / LLM', 'Full-Stack', 'OCR / Vision', 'Productivity'],
+    tagline: 'AI-powered professional letter generator with image-based letter analysis and rewriting.',
+    overview: "SCRIPTO is an AI-powered letter generation platform designed to help users create professional, well-structured letters quickly. Users can generate letters from their requirements or provide an existing letter through image upload or camera capture. SCRIPTO analyzes the image content and uses AI to understand the letter's structure, purpose, tone, and key information before generating a polished version while preserving the original intent.",
+    role: 'Full-Stack & AI Engineer — Architecture design, LLM prompt engineering, OCR/vision pipeline, REST API endpoints, and web client implementation.',
+    technologies: ['AI / LLM', 'Python', 'Flask', 'REST API', 'OCR / Image Analysis', 'HTML', 'CSS', 'JavaScript'],
+    highlights: [
+      'Engineered intelligent generative letter pipelines translating user requirements into polished, well-structured correspondence.',
+      'Integrated OCR and image analysis capabilities enabling direct camera capture and letter photo document uploads.',
+      'Implemented contextual rewriting algorithms to analyze tone, structure, and intent while preserving critical information.',
+      'Constructed a responsive full-stack platform with Flask REST API delivering fast, low-latency AI generation.'
+    ],
+    architecture: 'Input / Image Capture → OCR & Vision Processing → LLM Context Analysis (Tone, Purpose, Structure) → Flask REST API → Formatted Letter Generation',
+    links: {
+      github: null,
+      live: 'https://scripto-ai.vercel.app/'
+    }
   }
 ];

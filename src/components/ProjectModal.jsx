@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { X, ExternalLink, Layers, Cpu, CheckCircle2, Workflow } from 'lucide-react';
+import { X, ExternalLink, CheckCircle2, Workflow } from 'lucide-react';
 import { GithubIcon } from './Icons';
 import gsap from 'gsap';
 
@@ -245,7 +245,32 @@ export default function ProjectModal({ project, isOpen, onClose }) {
             </div>
 
             {/* Links */}
-            <div style={{ display: 'flex', gap: '1rem', paddingTop: '1.5rem', borderTop: '1px solid var(--border-subtle)' }}>
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', paddingTop: '1.5rem', borderTop: '1px solid var(--border-subtle)' }}>
+              {project.links.live && (
+                <a
+                  href={project.links.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="editorial-btn"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.6rem',
+                    padding: '0.8rem 1.4rem',
+                    background: 'var(--accent-cyan)',
+                    color: 'var(--bg-void)',
+                    borderRadius: '8px',
+                    textDecoration: 'none',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.85rem',
+                    fontWeight: '600',
+                    transition: 'opacity 0.2s ease',
+                  }}
+                >
+                  <ExternalLink size={18} />
+                  VIEW PROJECT
+                </a>
+              )}
               {project.links.github && (
                 <a
                   href={project.links.github}
